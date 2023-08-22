@@ -1,0 +1,6 @@
+.route-option {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  gap: 15px;
+}
