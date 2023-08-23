@@ -1,5 +1,9 @@
 import {Link} from 'react-router-dom'
 
+import {BsDot} from 'react-icons/bs'
+
+import moment from 'moment'
+
 import {
   VideoCard,
   VideoThumbnail,
@@ -9,29 +13,30 @@ import {
   VideoTitle,
   ChannelName,
   ViewsText,
+  ViewsAndPublished,
 } from './VideoItem'
 
 const VideoItem = props => {
   const {item} = props
 
-  const {
-    id,
-    title,
-    thumbnailUrl,
-    channel,
-    viewCount,
-    //  publishedAt
-  } = item
+  const {id, title, thumbnailUrl, channel, viewCount, publishedAt} = item
   return (
     <Link to={`/videos/${id}`} className="link-item">
       <VideoCard>
-        <VideoThumbnail src={thumbnailUrl} alt="thumbnail" />
+        <VideoThumbnail src={thumbnailUrl} alt="video thumbnail" />
         <VideoDetailsContainer>
-          <ChannelLogo src={channel.profileImageUrl} />
+          <ChannelLogo src={channel.profileImageUrl} alt="channel logo" />
           <VideoDetailsTextContainer>
             <VideoTitle>{title}</VideoTitle>
             <ChannelName>{channel.name}</ChannelName>
-            <ViewsText>{viewCount} Views</ViewsText>
+            <ViewsAndPublished>
+              <ViewsText>{viewCount} Views</ViewsText>
+
+              <ViewsText>
+                <BsDot />
+                {moment(publishedAt).fromNow()}
+              </ViewsText>
+            </ViewsAndPublished>
           </VideoDetailsTextContainer>
         </VideoDetailsContainer>
       </VideoCard>

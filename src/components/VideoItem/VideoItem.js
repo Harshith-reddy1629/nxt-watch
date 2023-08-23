@@ -46,3 +46,7 @@ export const ViewsText = styled.p`
   margin-top: 4px;
   color: #475569;
 `
+export const ViewsAndPublished = styled.div`
+  display: flex;
+  align-items: center;
+`

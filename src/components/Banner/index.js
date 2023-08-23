@@ -20,17 +20,17 @@ const Banner = () => {
   return (
     <>
       {!close && (
-        <BannerContainer>
+        <BannerContainer data-testid="banner">
           <BannerTextContainer>
             <BannerLogo
               src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-              alt="website logo"
+              alt="nxt watch logo"
             />
             <BannerText>
               Buy Nxt Watch Premium prepaid plans with UPI
             </BannerText>
             <BannerButton>GET IT NOW</BannerButton>
-            <BannerClose onClick={onClose}>
+            <BannerClose data-testid="close" onClick={onClose}>
               <AiOutlineClose />
             </BannerClose>
           </BannerTextContainer>

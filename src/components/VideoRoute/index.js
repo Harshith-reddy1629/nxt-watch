@@ -99,7 +99,7 @@ class VideoItemDetails extends Component {
       description,
     } = videoDetails
     return (
-      <ContentContainer pad="20px">
+      <ContentContainer>
         <VideoContainer>
           <ReactPlayer url={videoUrl} width="100%" height="100%" controls />
         </VideoContainer>
@@ -146,7 +146,11 @@ class VideoItemDetails extends Component {
       case ProgressOfPage.success:
         return this.successView()
       case ProgressOfPage.loading:
-        return <h1>LOADING...</h1>
+        return (
+          <div data-testid="loader">
+            <h1>LOADING...</h1>
+          </div>
+        )
       case ProgressOfPage.failed:
         return <h1>FAILED!</h1>
 

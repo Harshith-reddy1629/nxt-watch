@@ -19,7 +19,7 @@ export const TransparentButton = styled.button`
   //   font-weight: ${props => props.activeRoute && 'bold'};
   border: 0;
   color: ${props => (props.theme === true ? '#181818' : '#fff')};
-  padding: 7px;
+  padding: 9px;
   width: 100%;
 `
 
@@ -27,5 +27,5 @@ export const ContentContainer = styled.div`
   height: 100%;
   width: 100%;
   overflow-y: auto;
-  padding: ${props => (props.pad === undefined ? '0px' : props.pad)};
+  padding: 0;
 `

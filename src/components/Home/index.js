@@ -92,7 +92,11 @@ class Home extends Component {
 
   fetchingFailed = () => <h1>FAILED</h1>
 
-  PageLoading = () => <h1>LOADING...</h1>
+  PageLoading = () => (
+    <div data-testid="loader">
+      <h1>LOADING...</h1>
+    </div>
+  )
 
   displayOfHomepage = () => {
     const {statusofpage} = this.state
@@ -111,6 +115,7 @@ class Home extends Component {
 
   render() {
     const {searchvalue} = this.state
+
     return (
       <AllContext.Consumer>
         {values => {
@@ -130,6 +135,7 @@ class Home extends Component {
                   />
 
                   <HomeSearchBtn
+                    data-testid="searchButton"
                     theme={lightTheme}
                     type="button"
                     onClick={this.onSearch}
